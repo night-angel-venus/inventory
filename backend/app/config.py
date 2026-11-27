@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     TOKEN_EXPIRATION_MINUTES:int = 600
     RATE_LIMIT:str = "50/minute"
 
+
     model_config = SettingsConfigDict(env_file=".env", extra="allow")
 
 

@@ -8,7 +8,6 @@ from alembic import context
 from app.database import Base
 from app.models import (
     User,
-    BaseStock,
     StockIn,
     StockOut,
     DR_Order,

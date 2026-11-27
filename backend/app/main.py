@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 from app.utils.rate_limit import limiter
 
 
 from app.api import (
     auth_router,
-
+    items_router
 )
 
 from slowapi.errors import RateLimitExceeded
@@ -13,6 +14,7 @@ from slowapi import _rate_limit_exceeded_handler
 
 from starlette.middleware.base import BaseHTTPMiddleware
 import os
+from app.config import settings
 
 
 app = FastAPI(title="Inventory Movement Tracker")
@@ -44,3 +46,5 @@ app.add_middleware(
 
 
 app.include_router(auth_router)
+
+app.include_router(items_router)
