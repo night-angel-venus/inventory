@@ -6,7 +6,14 @@ from sqlalchemy import pool
 from alembic import context
 
 from app.database import Base
-from app.models import User
+from app.models import (
+    User,
+    BaseStock,
+    StockIn,
+    StockOut,
+    DR_Order,
+    Item
+)
 
 from dotenv import load_dotenv
 
